@@ -2,3 +2,6 @@
 Jeff Elkners csc 215 Computer Programing class
 
 Learning how to use the Altair 8800 Computer
+
+## Altair 8800 projects:
+- [16 bit addition program](https://github.com/bananajoeo7/csc215/blob/main/Projects/16BitAdderProject/16BitAdder_Instructions.md)
