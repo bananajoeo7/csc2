@@ -11,5 +11,4 @@
 ### Note:
 The bigest number the calculator can output is 65535.
 
-For the explanation for how the program works look at the following link (Made by Caleb O'Neal).
-https://github.com/CalebNeal07/csc215/blob/main/Projects/Adding16bits.md
+For the explanation for how the program works look at this [link](https://github.com/CalebNeal07/csc215/blob/main/Projects/Adding16bits.md) (made by Caleb O'Neal).
