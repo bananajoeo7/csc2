@@ -1,3 +1,6 @@
+## List of Instructions Used:
+This markdown file keeps a list of the instructions used and not used in Jeff's CSC 215 class.
+
 | Instruction |  Used   |
 | ----------- | ------- |
 | HLT | :heavy_check_mark: | 
@@ -16,6 +19,7 @@
 | JMP | :large_orange_diamond: |
 | DCR | :large_orange_diamond: |
 | MVI | :large_orange_diamond: |
+| CALL | :large_orange_diamond: |
 | IN | :red_circle: |
 | OUT  | :red_circle: |
 | EI | :red_circle: |
@@ -60,7 +64,6 @@
 | JP | :red_circle: |
 | JPE | :red_circle: |
 | JPO | :red_circle: |
-| CALL | :red_circle: |
 | CC | :red_circle: |
 | CMC | :red_circle: |
 | CZ | :red_circle: |
