@@ -13,8 +13,8 @@ This markdown file keeps a list of the instructions used and not used in Jeff's 
 | SHLD | :heavy_check_mark: |
 | LHLD | :heavy_check_mark: |
 | DAD | :heavy_check_mark: |
-| CMP | :large_orange_diamond: |
-| JNC | :large_orange_diamond: |
+| CMP | :heavy_check_mark: |
+| JNC | :heavy_check_mark: |
 | JC | :large_orange_diamond: |
 | JMP | :large_orange_diamond: |
 | DCR | :large_orange_diamond: |
