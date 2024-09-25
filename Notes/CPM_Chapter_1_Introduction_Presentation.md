@@ -1,0 +1,14 @@
+# CPM Chapter 1 VOCAB
+- <b/> CP/M operating system:</b> is a disk operating system and its purpose is to organize files on a magnetic storage medium, and to load and run programs stored on a disk. (WIKI definition)
+- <b/> Assembly Language: </b> a programing language that lets you communicate to a computer in a lower level language closer to machine language.
+- <b/> Computer Operator: </b> There are two types of computer operators, computer users and computer programers, as programers we have to make sure our programs not only work, but "they have to be usable by mere mortals". This is because we are gods brothers and sisters as computer programers.
+- <b/> ASR-33 (TTY): </b> It used to be a standard computer terminal that was created by the Teletype Corporation.
+- <b/> IC: </b> Integrated circuit.
+- <b/> DC: </b> Direct current.
+- <b/> 8085: </b> It is an improvement on the 8080, it is has a simplified hardware design and a great increase in operating speed.
+- <b/> RAM: </b> Acronym for Random Access Memory.
+- <b/> ROM: </b> Acronym for Read Only Memory.
+- <b/> PROM: </b> is a programable ROM.
+- <b/> EPROM: </b> is a erasable PROM.
+- <b/> CR: </b> Carrage return.
+- <b/> Modem: </b> is a contraction of "modulator-demodulator", which is a device that allows us to communicate with other computers over a telephone line.
