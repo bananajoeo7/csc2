@@ -53,3 +53,6 @@ So affter pushing the registers onto the stack we have to complete the following
 For program termination, rather than pressing the RESET switch, we can return to the operating system safely using a JMP 0 instruction. This ensures the system is reloaded and prevents any disruptions.
 
 If you have any other questions, the author sugests to refer to the 8080/8085 programming manual or Appendix B before moving ahead.
+
+### Sources:
+I used [WIKI CP/M](https://en.wikipedia.org/wiki/CP/M) to suplement my knowledge from the textbook.
