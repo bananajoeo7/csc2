@@ -6,6 +6,7 @@ note to self:
 - "v" enables the line numbers.
 - "-v" disables the line numbers.
 - Remeber to use "0a" at the beginning to load the file.
+- Use "ki" to delete a line.
 
 ## Tools to Be Used
 The CP/M manuals for ED, ASM, and DDT are important, but you don’t need to memorize everything right away. The tutorial introduces these tools, starting with a simplified subset of commands.
