@@ -1,5 +1,5 @@
 > CPMIO.ASM
-'''
+```
 ; CP/M I/O SUBROUTINES   30 JULY 82
 
 ; ASCII CHARACTERS
@@ -54,4 +54,4 @@ CO:     PUSH    B       ; SAVE REGISTERS
 STAK:   DB      0       ; TOP OF STACK
 
         END
-'''
+```

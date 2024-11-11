@@ -1,5 +1,6 @@
 > CH13.LIB
-'''
+
+```
 ; CARRIAGE RETURN, LINE FEED TO CONSOLE
 CCRLF:  MVI     A,CR
         CALL    CO
@@ -44,10 +45,10 @@ CIMSG:  PUSH    B           ; SAVE REGISTERS
         RET 
 
 INBUF:  DS      83          ; LINE INPUT BUFFER 
-'''
+```
 
 > TESTCH13.lib
-'''
+```
 START1: CALL    CCRLF       ; START A NEW LINE
         LXI     H,SINON     ; WITH SIGN-ON MESSAGE
         CALL    COMSG
@@ -57,6 +58,6 @@ START2: CALL    CIMSG       ; GET A LINE OF INPUT
         CALL    COMSG       ; ECHO THE WHOLE LINE
         CALL    CCRLF       ; AND CR, LF
         JMP     START2      ; THEN DO ANOTHER
-        
+
 SINON:  DB                  ;'SIGN-ON MESSAGE' ,CR,LF,O 
-'''
+```
