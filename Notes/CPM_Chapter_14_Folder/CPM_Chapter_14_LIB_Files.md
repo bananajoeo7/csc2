@@ -1,7 +1,7 @@
 > CH14.LIB
 ```
 ; MESSAGE POINTED TO BY STACK OUT TO CONSOLE
-SPMSG:  XTHL                    ; GET "RETURN ADRESS" TO HL
+SPMSG:  XTHL                    ; GET "RETURN ADRESS" TO hL
         XRA     A               ; CLEAR FLAGS AND ACCUMULATOR
         ADD     M               ; GET ONE MESSAGE CHARACTER
         INA     H               ; POINT TO NEXT
@@ -11,7 +11,7 @@ SPMSG:  XTHL                    ; GET "RETURN ADRESS" TO HL
         JMP     SPMSG           ; AND DO ANOTHER
 ; GET YES OR NO FROM CONSOLE
 GETYN:  CALL    SPMSG           ; PROMPT FOR INPUT
-        DB      ' (YIN)?: ',0
+        DB      ' (Y/N)?: ',0
         CALL    CIMSG           ; GET INPUT LANE
         CALL    CCRLF           ; ECHO CARRIAGE RETURN
         LDA     INBUF+2         ; FIRST CHARACTER ONLY
