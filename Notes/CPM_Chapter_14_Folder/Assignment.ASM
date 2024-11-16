@@ -102,6 +102,8 @@ GETTHING:       CALL    SPMSG           ; DISPLAY PROMPT
                 DB      'Name a thing: ', 0
                 CALL    CIMSG           ; GET INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
+                CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
+                DB      'YOU SAID ',0
                 CALL    COMSG           ; ECHO THING BACK TO USER
                 CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
                 DB      ', WOW THATS A PRETTY COOL THING.',0
