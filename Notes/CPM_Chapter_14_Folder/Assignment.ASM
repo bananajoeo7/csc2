@@ -19,7 +19,7 @@ TPA             EQU     100H            ; TRANSIENT PROGRAM AREA
 START           LXI     SP,STAK         ; SET UP USER'S STACK
 START1:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 CALL    SPMSG           ; DISPLAY SIGN-ON MESSAGE
-                DB      'WELCOME TO TROSTIN',SQT,'S LIKEY PROGRAM',CR,LF,0
+                DB      'WELCOME TO TROSTIN',SQT,'S THING PROGRAM',CR,LF,0
 START2:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 CALL    GETTHING        ; THING PROMPT
                 JMP     START2
