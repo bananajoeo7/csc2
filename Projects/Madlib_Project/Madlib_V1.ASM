@@ -28,7 +28,6 @@ START2:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 CALL    ADJNEWPROMPT
                 DB      'THE CASHIER SAID THEIR OUTFIT WAS ',0
                 CALL    COMSG           ; ECHO PROMPT BACK TO USER
-                RET                     ; AND ALL DONE
                 JMP     START2
 
 ; CONSOLE CHARACTER INTO REGISTER A MASKED TO 7 BITS
@@ -104,35 +103,37 @@ SPMSG:          XTHL                    ; GET "RETURN ADDRESS" TO HL
                 CALL    CO              ; ELSE DISPLAY CHARACTER
                 JMP     SPMSG           ; AND DO ANOTHER
 
-STARTNEWPROMPT: CALL    CCRLF           ; NEW LINE
-                CALL    SPMSG           ; START NEW MESSAGE
-                RET                     ; ALL DONE
 
-PERNEWPROMPT:   CALL    STARTNEWPROMPT  ; NEW LINE AND START DISPLAY MESSAGE
+PERNEWPROMPT:   CALL    CCRLF           ; NEW LINE
+                CALL    SPMSG           ; START NEW MESSAGE
                 DB      'GIVE A PERSON: ',0
                 CALL    CIMSG           ; GET THE INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
                 RET                     ; ALL DONE
 
-PLANEWPROMPT:   CALL    STARTNEWPROMPT  ; NEW LINE AND START DISPLAY MESSAGE
+PLANEWPROMPT:   CALL    CCRLF           ; NEW LINE
+                CALL    SPMSG           ; START NEW MESSAGE
                 DB      'GIVE A PLACE: ',0
                 CALL    CIMSG           ; GET THE INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
                 RET                     ; ALL DONE
 
-NOUNEWPROMPT:   CALL    STARTNEWPROMPT  ; NEW LINE AND START DISPLAY MESSAGE
+NOUNEWPROMPT:   CALL    CCRLF           ; NEW LINE
+                CALL    SPMSG           ; START NEW MESSAGE
                 DB      'GIVE A NOUN: ',0
                 CALL    CIMSG           ; GET THE INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
                 RET                     ; ALL DONE
 
-ADJNEWPROMPT:   CALL    STARTNEWPROMPT  ; NEW LINE AND START DISPLAY MESSAGE
+ADJNEWPROMPT:   CALL    CCRLF           ; NEW LINE
+                CALL    SPMSG           ; START NEW MESSAGE
                 DB      'GIVE A ADJETIVE: ',0
                 CALL    CIMSG           ; GET THE INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
                 RET                     ; ALL DONE
 
-ADVNEWPROMPT:   CALL    STARTNEWPROMPT  ; NEW LINE AND START DISPLAY MESSAGE
+ADVNEWPROMPT:   CALL    CCRLF           ; NEW LINE
+                CALL    SPMSG           ; START NEW MESSAGE
                 DB      'GIVE A ADVERB: ',0
                 CALL    CIMSG           ; GET THE INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
