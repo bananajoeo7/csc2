@@ -97,7 +97,7 @@ SPMSG:          XTHL                    ; GET "RETURN ADDRESS" TO HL
                 CALL    CO              ; ELSE DISPLAY CHARACTER
                 JMP     SPMSG           ; AND DO ANOTHER
 
-; GET NUMBER FROM CONSOLE
+; GET THING FROM CONSOLE
 GETTHING:       CALL    SPMSG           ; DISPLAY PROMPT
                 DB      'Name a thing: ', 0
                 CALL    CIMSG           ; GET INPUT LINE
