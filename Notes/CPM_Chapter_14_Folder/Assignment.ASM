@@ -99,12 +99,12 @@ SPMSG:          XTHL                    ; GET "RETURN ADDRESS" TO HL
 
 ; GET NUMBER FROM CONSOLE
 GETTHING:       CALL    SPMSG           ; DISPLAY PROMPT
-                DB      'Name a thing:', 0
+                DB      'Name a thing: ', 0
                 CALL    CIMSG           ; GET INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
                 CALL    COMSG           ; ECHO THING BACK TO USER
                 CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
-                DB      ' , WOW THATS A PRETTY COOL THING.',0
+                DB      ', WOW THATS A PRETTY COOL THING.',0
                 RET                     ; AND ALL DONE
 
 INBUF:          DS      83              ; LINE INPUT BUFFER
