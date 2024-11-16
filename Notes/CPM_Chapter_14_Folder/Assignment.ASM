@@ -20,7 +20,8 @@ START           LXI     SP,STAK         ; SET UP USER'S STACK
 START1:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 CALL    SPMSG           ; DISPLAY SIGN-ON MESSAGE
                 DB      'WELCOME TO TROSTIN',SQT,'S LIKEY PROGRAM',CR,LF,0
-
+START2:         CALL    TWOCR           ; DOUBLE SPACE LINES
+                
 
 ; CONSOLE CHARACTER INTO REGISTER A MASKED TO 7 BITS
 CI:             PUSH    B               ; SAVE REGISTERS
@@ -96,14 +97,13 @@ SPMSG:          XTHL                    ; GET "RETURN ADDRESS" TO HL
                 JMP     SPMSG           ; AND DO ANOTHER
 
 ; GET NUMBER FROM CONSOLE
-GETNUM:         CALL    SPMSG           ; PROMPT FOR INPUT
-                DB      'ENTER A POSITIVE INTEGER: ',0
-                CALL    CIMSG           ; GET THE INPUT LINE
+GETTHING:       CALL    SPMSG           ; DISPLAY PROMPT
+                DB      'Name a thing:', 0
+                CALL    CIMSG           ; GET INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
-                CALL    SPMSG           ; DISPLAY CONFIRM MESSAGE 
-                DB      'YOU ENTERED: ',0
-                CALL    COMSG           ; ECHO NUM BACK TO USER
-                CALL    CCRLF           ; ECHO CARRIAGE RETURN
+                CALL    COMSG           ; ECHO THING BACK TO USER
+                CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
+                DB      ' , WOW THATS A PRETTY COOL THING.',0
                 RET                     ; AND ALL DONE
 
 INBUF:          DS      83              ; LINE INPUT BUFFER
