@@ -30,6 +30,23 @@ START2:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 DB      'THE CASHIER SAID THEIR OUTFIT WAS ',0
                 CALL    COMSG           ; ECHO PROMPT BACK TO USER
                 CALL    PERIOD          ; OUTPUT PERIOD TO CONSOLE
+                CALL    NOUNEWPROMPT    ; PROMPT FOR A NOUN
+                CALL    SPMSG
+                DB      'WHILE AT THE STORE THEY WANTED TO BUY ',0
+                CALL    COMSG
+                CALL    PERIOD          ; OUTPUT PERIOD TO CONSOLE
+                CALL    PLANEWPROMPT    ; PROMPT FOR A PLACE
+                CALL    SPMSG
+                DB      'AFTER THEY CHECKED OUT THEY REALIZED THEY HAD TO BE AT ',0
+                CALL    COMSG
+                CALL    SPMSG
+                DB      ' IN AN HOUR.',0
+                CALL    ADVNEWPROMPT    ; PROMPT FOR A ADVERB
+                CALL    SPMSG   
+                DB      'SO THEY ',0
+                CALL    COMSG
+                CALL    SPMSG
+                DB      ' RAN TO THEIR DESTINATION SO THEY WOULDN',SQT,'T BE LATE.',0
                 JMP     START2
 
 ; CONSOLE CHARACTER INTO REGISTER A MASKED TO 7 BITS
