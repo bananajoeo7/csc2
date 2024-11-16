@@ -22,6 +22,18 @@ START1:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 DB      'WELCOME TO TROSTIN',SQT,'S LIKEY PROGRAM',CR,LF,0
 START2:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 CALL    GETTHING        ; THING PROMPT
+                DB      'WOW, YOU MUST REALLY NOT LIKEY ',0
+                LXI     H,INBUF+2       ; POINT TO THING
+                CALL    COMSG           ; ECHO THING
+                CALL    SPMSG
+                DB      ' THATS TOO SAD DUDE.',0
+                JMP     START2
+START3:         CALL    SPMSG
+                DB      'WOW, YOU MUST REALLY LIKEY ',0
+                LXI     H,INBUF+2       ; POINT TO THING
+                CALL    COMSG           ; ECHO THING
+                CALL    SPMSG
+                DB      ' THATS PRETTY COOL DUDE.',0
                 JMP     START2
 
 ; CONSOLE CHARACTER INTO REGISTER A MASKED TO 7 BITS
@@ -97,24 +109,40 @@ SPMSG:          XTHL                    ; GET "RETURN ADDRESS" TO HL
                 CALL    CO              ; ELSE DISPLAY CHARACTER
                 JMP     SPMSG           ; AND DO ANOTHER
 
-; GET NUMBER FROM CONSOLE
+GETYN:          CALL    SPMSG           ; PROMPT FOR INPUT
+                DB      ' (Y/N)?: ',0
+                CALL    CIMSG           ; GET INPUT LINE
+                CALL    CCRLF           ; ECHO CARRIAGE RETURN
+                LDA     INBUF+2         ; FIRST CHARACTER ONLY
+                ANI     01011111B       ; CONVERT LOWER CASE TO UPPER
+                CPI     'Y'             ; RETURN WITH ZERO = YES
+                RZ
+                CPI     'N'             ; NON-ZERO = NO
+                JNZ     GETYN           ; ELSE TRY AGAIN
+                CPI     0               ; RESET ZERO FLAG
+                RET                     ; AND ALL DONE
+
+; GET THING FROM CONSOLE
 GETTHING:       CALL    SPMSG           ; DISPLAY PROMPT
                 DB      'Name a thing: ', 0
                 CALL    CIMSG           ; GET INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
-                CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
-                DB      'YOU SAID ',0
-                CALL    COMSG           ; ECHO THING BACK TO USER
-                CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
-                DB      ', WOW THATS A PRETTY COOL THING.',0
-                CALL    CCRLF           ; ADD LINE
-                CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
-                DB      'I HEARD THAT MY FRIEND BILLY ALSO LIKES ',0
-                LXI     H,INBUF+2       ; POINT TO ITS TEXT
-                CALL    COMSG           ; ECHO THING BACK TO USER
-                CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
-                DB      '.',0
+                CALL    SPMSG
+                DB      'WOW, ',0
+                CALL    COMSG           ; ECHO THING
+                CALL    SPMSG
+                DB      ', NOW THATS A THING.',0
                 RET                     ; AND ALL DONE
+
+; ASK IF USER LIKEY THING
+LIKEYTHING:     CALL    TWOCR           ; ADD TWO LINES
+                CALL    SPMSG           ; PROMPT USER IF LIKEY
+                DB      'DO YOU LIKEY ',0
+                LXI     H,INBUF+2       ; POINT TO THING
+                CALL    COMSG           ; ECHO USER'S THING
+                CALL    GETYN           ; GET RESULT IF LIKEY
+                JNZ     START3          ; GOT A "NO"
+                RET                     ; GOT A "YES"
 
 INBUF:          DS      83              ; LINE INPUT BUFFER
 
