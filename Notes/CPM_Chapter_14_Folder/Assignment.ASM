@@ -1,3 +1,5 @@
+; CREATOR: TROSTIN GELES
+
 ; ASCII CHARACTERS
 CR              EQU     0DH             ; CARRIAGE RETURN
 LF              EQU     0AH             ; LINE FEED
