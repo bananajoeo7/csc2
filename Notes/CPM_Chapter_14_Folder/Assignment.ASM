@@ -107,6 +107,12 @@ GETTHING:       CALL    SPMSG           ; DISPLAY PROMPT
                 CALL    COMSG           ; ECHO THING BACK TO USER
                 CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
                 DB      ', WOW THATS A PRETTY COOL THING.',0
+                CALL    CCRLF           ; ADD LINE
+                CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
+                DB      'I HEARD THAT MY FRIEND BILLY ALSO LIKES ',0
+                CALL    COMSG           ; ECHO THING BACK TO USER
+                CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
+                DB      '.',0
                 RET                     ; AND ALL DONE
 
 INBUF:          DS      83              ; LINE INPUT BUFFER
