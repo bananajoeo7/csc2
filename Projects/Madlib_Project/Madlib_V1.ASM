@@ -26,8 +26,10 @@ START2:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
                 DB      ' WALKED TO THE STORE IN HIS NEW OUTFIT.',0
                 CALL    ADJNEWPROMPT
+                CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
                 DB      'THE CASHIER SAID THEIR OUTFIT WAS ',0
                 CALL    COMSG           ; ECHO PROMPT BACK TO USER
+                CALL    PERIOD          ; OUTPUT PERIOD TO CONSOLE
                 JMP     START2
 
 ; CONSOLE CHARACTER INTO REGISTER A MASKED TO 7 BITS
@@ -139,10 +141,15 @@ ADVNEWPROMPT:   CALL    CCRLF           ; NEW LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
                 RET                     ; ALL DONE
 
+; CONSOLE TEXT SUBROUTINES
+PERIOD:         CALL     SPMSG           ; DISPLAY RESPONSE MESSAGE
+                DB      '.',0
+                RET             ; ALL DONE
+
 INBUF:          DS      83              ; LINE INPUT BUFFER
 
 ; SET UP STACK SPACE
-                DS      64              ; 40H LOCATIONS
+                DS      128             ;
 STAK:           DB      0               ; TOP OF STACK
 
                 END
