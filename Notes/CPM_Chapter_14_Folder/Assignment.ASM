@@ -21,7 +21,8 @@ START1:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 CALL    SPMSG           ; DISPLAY SIGN-ON MESSAGE
                 DB      'WELCOME TO TROSTIN',SQT,'S LIKEY PROGRAM',CR,LF,0
 START2:         CALL    TWOCR           ; DOUBLE SPACE LINES
-                
+                CALL    GETTHING        ; THING PROMPT
+                JMP     START2
 
 ; CONSOLE CHARACTER INTO REGISTER A MASKED TO 7 BITS
 CI:             PUSH    B               ; SAVE REGISTERS
