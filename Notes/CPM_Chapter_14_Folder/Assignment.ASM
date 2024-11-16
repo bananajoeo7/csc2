@@ -110,6 +110,7 @@ GETTHING:       CALL    SPMSG           ; DISPLAY PROMPT
                 CALL    CCRLF           ; ADD LINE
                 CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
                 DB      'I HEARD THAT MY FRIEND BILLY ALSO LIKES ',0
+                LXI     H,INBUF+2       ; POINT TO ITS TEXT
                 CALL    COMSG           ; ECHO THING BACK TO USER
                 CALL    SPMSG           ; DISPLAY RESPONSE MESSAGE
                 DB      '.',0
