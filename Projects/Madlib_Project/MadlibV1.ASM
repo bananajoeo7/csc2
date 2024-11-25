@@ -34,7 +34,7 @@ START2:         CALL    TWOCR           ; DOUBLE SPACE LINES
                 CALL    PERIOD          ; OUTPUT PERIOD TO CONSOLE
                 CALL    NOUNEWPROMPT    ; PROMPT FOR A NOUN
                 CALL    SPMSG
-                DB      'WHILE AT THE STORE THEY WANTED TO BUY ',0
+                DB      'WHILE AT THE STORE THEY WANTED TO BUY A(N) ',0
                 CALL    COMSG
                 CALL    PERIOD          ; OUTPUT PERIOD TO CONSOLE
                 CALL    PLANEWPROMPT    ; PROMPT FOR A PLACE
