@@ -148,7 +148,7 @@ NOUNEWPROMPT:   CALL    CCRLF           ; NEW LINE
 
 ADJNEWPROMPT:   CALL    CCRLF           ; NEW LINE
                 CALL    SPMSG           ; START NEW MESSAGE
-                DB      'GIVE A ADJETIVE: ',0
+                DB      'GIVE A ADJECTIVE: ',0
                 CALL    CIMSG           ; GET THE INPUT LINE
                 LXI     H,INBUF+2       ; POINT TO ITS TEXT
                 RET                     ; ALL DONE
