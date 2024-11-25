@@ -168,7 +168,7 @@ PERIOD:         CALL     SPMSG           ; DISPLAY RESPONSE MESSAGE
 INBUF:          DS      83              ; LINE INPUT BUFFER
 
 ; SET UP STACK SPACE
-                DS      128             ;
+                DS      64              ;
 STAK:           DB      0               ; TOP OF STACK
 
                 END
