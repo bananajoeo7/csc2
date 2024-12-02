@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int c, i, nwhite, nother;
+    int ndigit[10] = {0};  // Initialize array to count digits 0-9
+    nwhite = nother = 0;
+
+    while ((c = getchar()) != EOF) { // Read input until EOF
+        if (c >= '0' && c <= '9') {  // Check if character is a digit
+            ++ndigit[c - '0'];
+        } else if (c == ' ' || c == '\n' || c == '\t') {  // Check for white space
+            ++nwhite;
+        } else {  // Any other character
+            ++nother;
+        }
+    }
+
+    printf("digits =");
+    for (i = 0; i < 10; ++i) {
+        printf(" %d", ndigit[i]);  // Print count of each digit
+    }
+    printf("\nwhite space = %d, other = %d\n", nwhite, nother);
+
+    return 0;
+}

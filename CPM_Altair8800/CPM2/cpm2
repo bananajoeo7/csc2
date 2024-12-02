@@ -1,0 +1,16 @@
+d tracks[0-7] 254
+attach dsk0 cpm2.dsk
+attach dsk1 app.dsk
+attach dsk2 bdsc160.dsk
+attach dsk3 data.dsk
+attach hdsk0 i.dsk
+attach hdsk1 j.dsk
+set cpu 64k
+set cpu noitrap
+set cpu z80
+set cpu altairrom
+set cpu nonbanked
+reset cpu
+set sio ansi
+set sio nosleep
+boot dsk
