@@ -14,7 +14,7 @@ int main(argc, argv)
         for (j = 0; argv[i][j] != '\0'; j++) {
             if (argv[i][j] == ' ') {
                 if (!in_blank) {
-                    putchar(' ')
+                    putchar(' ');
                     in_blank = 1;
                 }
             } else {
