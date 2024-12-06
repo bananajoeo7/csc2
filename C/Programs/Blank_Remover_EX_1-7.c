@@ -15,7 +15,7 @@ int main(argc, argv)
             if (argv[i][j] == ' ') {
                 if (!in_blank) {
                     putchar(' ')
-                    in_blank = 1
+                    in_blank = 1;
                 }
             } else {
                 putchar(argv[i][j]); 
