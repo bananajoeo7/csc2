@@ -2,6 +2,20 @@
 
 #define MAXLENGTH 128
 
+reverseString(length, str) 
+char *str; 
+int length;
+{
+    int c;
+    char *temp;
+
+    for (i = 0; i < length/2; i++) {
+        temp = str[i];
+        str[i] = str[length - (i + 1)];
+        str[length - (i + 1)] = temp;
+    }
+}
+
 main(argc, argv)
 int argc;
 char *argv[];
