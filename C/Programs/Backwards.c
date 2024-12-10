@@ -14,6 +14,9 @@ int length;
         str[i] = str[length - (i+1)];
         str[length - (i+1)] = c;
     }
+
+    str[length] = '\0';
+    return str;
 }
 
 main(argc, argv)
