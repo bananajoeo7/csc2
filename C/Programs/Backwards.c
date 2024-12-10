@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAXLENGTH 100
+#define MAXLENGTH 80
 
 reverseString(length, str) 
 char *str; 
@@ -24,6 +24,9 @@ int argc;
 char *argv[];
 {
     FILE *infp;
+    int c, length;
+    length = 0;
+    char line[MAXLENGTH];
 
     if (argc != 2) {
         printf("Usage: space <filename.txt>\n");
@@ -35,8 +38,6 @@ char *argv[];
         exit();
     }
 
-    char line[MAXLENGTH];
-    int c, length;
 
     infp = fopen(argv[1], "r");
     while ((c = fgetc(infp)) != EOF) {
