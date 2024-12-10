@@ -1,18 +1,18 @@
 #include <stdio.h>
 
-#define MAXLENGTH 128
+#define MAXLENGTH 100
 
 reverseString(length, str) 
 char *str; 
 int length;
 {
-    int c, i;
-    char *temp;
+    int i, c;
+    c = 0;
 
     for (i = 0; i < length/2; i++) {
-        temp = str[i];
-        str[i] = str[length - (i + 1)];
-        str[length - (i + 1)] = temp;
+        c = str[i];
+        str[i] = str[length - (i+1)];
+        str[length - (i+1)] = c;
     }
 }
 
@@ -39,13 +39,17 @@ char *argv[];
     while ((c = fgetc(infp)) != EOF) {
         if (c == '\n') {
             line[length] = '\0';
-            printf("%s\n", reverseString(length, line));
+            printf("%s\n", reverseString(line, length));
             length = 0;
             continue;
         }
 
         line[length] = c;
         length++;
+    }
+
+    if (length != 0) {
+        printf("%s\n", reverseString(line, length));
     }
 
     fclose(infp);
