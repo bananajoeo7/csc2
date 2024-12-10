@@ -2,7 +2,7 @@
 
 #define MAXLENGTH 128
 
-void main(argc, argv)
+main(argc, argv)
 int argc;
 char* argv[];
 {
@@ -23,10 +23,15 @@ char* argv[];
         if (c == '\n') {
             line[ls] = '\0';
             printf("%d:  %s\n", ls, line);
+
+
+
             ls = 0;
             continue;
         } 
+        line[ls] = c;
+        ls++;
     }
     fclose(infp);
-    return;
+    return 0;
 }
