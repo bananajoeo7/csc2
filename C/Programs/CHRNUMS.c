@@ -15,10 +15,12 @@ char* argv[];
         printf("Usage: space <filename.txt>\n");
         exit();
     }
+    
     if ((infp = fopen(argv[1], "r")) == NULL) {
         printf("Can’t open %s\n", argv[1]);
         exit();
     }
+
     while ((c = fgetc(infp)) != EOF) {
         if (c == '\n') {
             line[ls] = '\0';
