@@ -6,7 +6,7 @@ reverseString(length, str)
 char *str; 
 int length;
 {
-    int c;
+    int c, i;
     char *temp;
 
     for (i = 0; i < length/2; i++) {
@@ -33,10 +33,19 @@ char *argv[];
     }
 
     char line[MAXLENGTH];
-    int length;
+    int c, length;
 
-    while (fgets(line, sizeof(line), infp)) {
-        
+    infp = fopen(argv[1], "r");
+    while ((c = fgetc(infp)) != EOF) {
+        if (c == '\n') {
+            line[length] = '\0';
+            printf("%s\n", reverseString(length, line));
+            length = 0;
+            continue;
+        }
+
+        line[length] = c;
+        length++;
     }
 
     fclose(infp);
