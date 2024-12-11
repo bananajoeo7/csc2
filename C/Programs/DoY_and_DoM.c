@@ -32,12 +32,12 @@ int year, month, day; /*from month of day*/
 
 main() {
   int day, month, year, outcome;
-  yrar = 2077
+  year = 2077
   month = 7;
   day = 15;
 
   outcome = day_of_year(year, month, day); 
-  
+
   printf("%d", outcome);
   return;
 }
