@@ -18,8 +18,26 @@ int *day_tab[13];
 day_of_year (year, month, day) /*set day of year*/
 int year, month, day; /*from month of day*/
 {
-    for (i = 1; i < month; i++) {
+    int i;
 
+    for (i = 1; i < month; i++) {
+        if(month == 2 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+            day += day_tab + i + 1;
+        } else {
+             day += day_tab + i;
+        }
     }
     return(day);
+}
+
+main() {
+  int day, month, year, outcome;
+  yrar = 2077
+  month = 7;
+  day = 15;
+
+  outcome = day_of_year(year, month, day); 
+  
+  printf("%d", outcome);
+  return;
 }
