@@ -22,12 +22,35 @@ order of operations?
 
 ### Answers:
 
-1: First, in the calculator program you would have to let the program recognize the new operations 
-"M" and "A". In the case of the "M" operation you would have to just make the current vale, lets 
-denote it as Num, so ```Num = -Num```. In the case of the "A" operation you would first have to 
-check if the number is greater than or less that zero, and if its greater than zero return Num, 
-but if its less than zero you would just have to make ```Num = -Num```, just like before.
+1: First, in the calculator program you would have to let the program recognize the new operations "M" and "A". In the case of the "M" 
+operation you would have to just make the current vale, lets denote it 
+as Num, so ```Num = -Num```. In the case of the "A" operation you would 
+first have to check if the number is greater than or less that zero, and
+if its greater than zero return Num, but if its less than zero you would
+ just have to make ```Num = -Num```, just like before.
 
-2: To have the program recognize a word instead of a character, you would have the program check 
-for a string instead of a charcter. Additionally, you would probably want to have the recieved 
-string be changed to all lowercase to prevent any possibility's for failure.
+2: To have the program recognize a word instead of a character, you 
+would have the program check for a string instead of a charcter. 
+Additionally, you would probably want to have the recieved string be 
+changed to all lowercase to prevent any possibility's for 
+failure.
+
+3: First, you would have to change int variables to double variables.
+ Next you would have to chaneg the input to take double values instead 
+of int values, and same with the output. And finnaly change the opperations to handle double values.
+
+4: I am unaware of how to do this, but my first step would be to 
+research how to do this using some rudementary display system or use 
+some game engine that supports c and c++ to use its tools to make a 
+simple GUI, like godot.
+
+5: To implement a clear command "C" you would have to let the prgram 
+recognize the input for the new opperator "C". Then you would likely 
+have all of your variables be global and just have a function that sets
+all of the variables to 0.
+
+6: To have your calculator use parentheses you would likely have to have 
+the program take an input as a string. Next, you would have to parse 
+through the string until it found each parentheses with the parse 
+labeling where the parentheses is with variables like "j" and "i". Then, have the program complete the operations within the parentheses first,
+and then finnaly the operators outside of the parentheses. 
