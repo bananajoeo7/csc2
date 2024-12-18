@@ -73,4 +73,12 @@ and then finnaly the operators outside of the parentheses.
 
 1: In the programming enviroment of BDS C the largest interger value is a 32 bit number and the smallest value I guess is 0 (or a -31 bit number).
 
-2:
+2: One possible solution is the creation of a string (character array) that stores a large number. The limit to that solution is how much data the enviroment that you are using, unless there is a limit to how large a string can be made.
+
+3: I believe that the hardest arithmetic operation would be "*" because it will likely generate the largest numbers faster, and if you use a string to store data I'm not 100% sure how easily that can be accomplished.
+
+4: In the calc program as soon as the letter a is typed in the first case it makes the value 16706, but in the second case it just uses 1234 as the number it progresses to the next step in the program. And if I enter a different opperator, such as "/", it disregards what I just put in and asks again for an operator.
+
+5: There is: "**", "/", "%", "()" theoretically.
+
+6: A destructor would likely be used if incorrect input is provided, a copy constructor would likely be used when modifying the input provided, and an assignment operator would likely be used for a for loop or once valid input is provided.
