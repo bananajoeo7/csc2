@@ -1,9 +1,15 @@
 #include <stdio.h>
 #define BAD_OP  '\0'
+
 /*
 This program implements a three function calculator as the first step to a
 test program for bignum struct.
 */
+
+alloca
+
+
+
 int main()
 {
     int accumulator, input, op;
