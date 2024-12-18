@@ -70,3 +70,7 @@ and then finnaly the operators outside of the parentheses.
 6. (AB only) What implementation decisions would require providing a destructor, a copy constructor, and an assignment operator?
 
 ### Answers:
+
+1: In the programming enviroment of BDS C the largest interger value is a 32 bit number and the smallest value I guess is 0 (or a -31 bit number).
+
+2:
