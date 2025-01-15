@@ -1,11 +1,11 @@
 all: one two three
 
 one:
-	touch one
+	echo. > one
 two:
-	touch two
+	echo. > two
 three:
-	touch three
+	echo. > three
 
 clean:
 	rm -f one two three
