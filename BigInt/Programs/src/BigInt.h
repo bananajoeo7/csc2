@@ -13,7 +13,7 @@ class BigInt
     BigInt(string);
 
     // helper functions
-    BigInt sum_common_digits(const BigInt&) const;
+    BigInt sum(const BigInt&) const;
 
     // member functions
     string to_string() const;
