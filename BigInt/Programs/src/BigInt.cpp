@@ -91,12 +91,14 @@ BigInt BigInt::sum(const BigInt& i2) const
         digsum2 = temp;
     }
 
-    for (int i = digsum1.size() - 1; i >= 0; i--) {
-        digsum = (sum[i] - '0') + (i2.digits[i] - '0');
-        sum[i] = digsum % 10 + '0' + carry;
-        carry = digsum > 9 ? 1 : 0;
-    }
-    return BigInt(sum);
+    reverse(digsum1.begin(), digsum1.end());
+    reverse(digsum2.begin(), digsum2.end());
+
+    string sum_total;
+    char carry = 0;
+
+    
+    return BigInt(sum_total);
 }
 
 BigInt BigInt::operator+(const BigInt& i2) const
