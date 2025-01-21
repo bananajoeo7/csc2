@@ -62,20 +62,11 @@ TEST_CASE("Test helper function to add BigInts") {
     BigInt i3("222");
     BigInt i4("888");
     BigInt i5("119");
+    BigInt i5("361736761273");
     CHECK((i1.sum(i2)).to_string() == "444");
     CHECK((i1.sum(i1)).to_string() == "246");
     CHECK((i1.sum(i3)).to_string() == "345");
     CHECK((i1.sum(i5)).to_string() == "242");
     CHECK((i1.sum(i4)).to_string() == "1011");
+    CHECK((i1.sum(i5)).to_string() == "361736761396");
 }
-/*
-TEST_CASE("Test can add BigInts") {
-    BigInt i1("123");
-    BigInt i2("321");
-    BigInt i3("43210");
-    BigInt i4("9999");
-    BigInt i5("1");
-    CHECK((i1 + i2).to_string() == "444");
-    CHECK((i1 + i3).to_string() == "43333");
-}
-*/
