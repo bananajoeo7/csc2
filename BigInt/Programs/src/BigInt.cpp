@@ -81,18 +81,17 @@ bool BigInt::operator>=(const BigInt& i2) const
 
 BigInt BigInt::sum(const BigInt& i2) const
 {
-    char digsum, carry = 0;
-    string digsum1, digsum2;
-    int larger_length;
-    string sum = digits;
+    string digsum1, digsum2, temp;
+    digsum1 = digits;
+    digsum2 = i2.digits;
 
-    if (digsum1 >= digsum2){
-        larger_length = digsum2.size() - 1;
-    } else {
-        larger_length = digsum2.size() - 1;
+    if (digsum1.size() < digsum2.size()) {
+        temp = digsum1;
+        digsum1 = digsum2;
+        digsum2 = temp;
     }
 
-    for (int i = sum.size() - 1; i >= 0; i--) {
+    for (int i = digsum1.size() - 1; i >= 0; i--) {
         digsum = (sum[i] - '0') + (i2.digits[i] - '0');
         sum[i] = digsum % 10 + '0' + carry;
         carry = digsum > 9 ? 1 : 0;
