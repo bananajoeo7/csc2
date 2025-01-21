@@ -78,10 +78,17 @@ bool BigInt::operator>=(const BigInt& i2) const
     return (this->operator>(i2)) || (this->operator==(i2));
 }
 
-BigInt BigInt::sum_common_digits(const BigInt& i2) const
+BigInt BigInt::sum(const BigInt& i2) const
 {
-    char digsum, carry = 0;
+    char digsum1, digsum2, carry = 0;
+    int larger_length;
     string sum = digits;
+
+    if (digsum1 >= digsum2){
+        larger_length = digsum2.size() - 1;
+    } else {
+        larger_length = digsum21.size() - 1;
+    }
 
     for (int i = sum.size() - 1; i >= 0; i--) {
         digsum = (sum[i] - '0') + (i2.digits[i] - '0');

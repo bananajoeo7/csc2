@@ -56,17 +56,17 @@ TEST_CASE("Test can compare BigInts with !=, <=, <, and <=") {
     CHECK((i6 >= i4) == true);
 }
 
-TEST_CASE("Test helper function to add BigInts with same number of digits") {
+TEST_CASE("Test helper function to add BigInts") {
     BigInt i1("123");
     BigInt i2("321");
     BigInt i3("222");
     BigInt i4("888");
     BigInt i5("119");
-    CHECK((i1.sum_common_digits(i2)).to_string() == "444");
-    CHECK((i1.sum_common_digits(i1)).to_string() == "246");
-    CHECK((i1.sum_common_digits(i3)).to_string() == "345");
-    CHECK((i1.sum_common_digits(i5)).to_string() == "242");
-    CHECK((i1.sum_common_digits(i4)).to_string() == "1011");
+    CHECK((i1.sum(i2)).to_string() == "444");
+    CHECK((i1.sum(i1)).to_string() == "246");
+    CHECK((i1.sum(i3)).to_string() == "345");
+    CHECK((i1.sum(i5)).to_string() == "242");
+    CHECK((i1.sum(i4)).to_string() == "1011");
 }
 /*
 TEST_CASE("Test can add BigInts") {
