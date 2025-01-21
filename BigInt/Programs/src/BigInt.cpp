@@ -97,7 +97,21 @@ BigInt BigInt::sum(const BigInt& i2) const
     string sum_total;
     char carry = 0;
 
+    for (size_t i = 0; i < digsum1.size(); i++) {
+        int digit1 = digsum1[i] - '0';
+        int digit2 = (i < digsum2.size()) ? digsum2[i] - '0' : 0;
+
+        int digitSum = digit1 + digit2 + carry;
+        sum_total.push_back((digitSum % 10) + '0');
+        carry = digitSum/10;
+    }
     
+    if (carry > 0) {
+        sum_total.push_back(carry + '0');
+    }
+
+    reverse(sum_total.begin(), sum_total.end());
+
     return BigInt(sum_total);
 }
 
