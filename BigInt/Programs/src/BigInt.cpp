@@ -123,7 +123,7 @@ BigInt BigInt::mult(const BigInt& i2) const
 
     while (multCount != "0") {
         multTotal = multTotal + multNum;
-        multCount = multCount - "1";
+        multCount = multCount - BigInt("1");
     }
 
     return mult_total;
