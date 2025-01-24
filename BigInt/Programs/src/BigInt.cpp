@@ -79,6 +79,11 @@ bool BigInt::operator>=(const BigInt& i2) const
     return (this->operator>(i2)) || (this->operator==(i2));
 }
 
+BigInt Bigint::sub(const BigInt& i2) const
+{
+    
+}
+
 BigInt BigInt::sum(const BigInt& i2) const
 {
     string digsum1, digsum2, temp;
@@ -130,6 +135,13 @@ BigInt BigInt::mult(const BigInt& i2) const
     return multTotal;
 }
 
+BigINt BigInt::operator-(const BigInt& i2) const
+{
+    BigInt sub;
+
+    return sub;
+}
+
 BigInt BigInt::operator+(const BigInt& i2) const
 {
     BigInt sum;
@@ -137,9 +149,9 @@ BigInt BigInt::operator+(const BigInt& i2) const
     return sum;
 }
 
-BigInt BigInt::operator*(const BigInt &) const
+BigInt BigInt::operator*(const BigInt & i2) const
 {
     BigInt mult;
 
-    return BigInt();
+    return mult;
 }
