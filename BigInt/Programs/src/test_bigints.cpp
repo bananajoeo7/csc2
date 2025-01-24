@@ -70,3 +70,16 @@ TEST_CASE("Test helper function to add BigInts") {
     CHECK((i1.sum(i4)).to_string() == "1011");
     CHECK((i1.sum(i6)).to_string() == "361736761396");
 }
+
+TEST_CASE("Test helper function to multiply BigInts") {
+    BigInt i1("123");
+    BigInt i2("321");
+    BigInt i3("222");
+    BigInt i4("888");
+    BigInt i5("119");
+    CHECK((i1.mult(i2)).to_string() == "39483");
+    CHECK((i1.mult(i1)).to_string() == "15129");
+    CHECK((i1.mult(i3)).to_string() == "27306");
+    CHECK((i1.mult(i5)).to_string() == "14637");
+    CHECK((i1.mult(i4)).to_string() == "109224");
+}
