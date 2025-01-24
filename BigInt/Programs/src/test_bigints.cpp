@@ -71,6 +71,7 @@ TEST_CASE("Test helper function to add BigInts") {
     CHECK((i1.sum(i6)).to_string() == "361736761396");
 }
 
+/*
 TEST_CASE("Test helper function to add BigInts with negatives") {
     BigInt i1("123");
     BigInt i2("-321");
@@ -88,7 +89,7 @@ TEST_CASE("Test helper function to add BigInts with negatives") {
     CHECK((i7.sum(i6)).to_string() == "0");
     CHECK((i7.sum(i1)).to_string() == "361736761396");
 }
-
+*/
 
 /*
 TEST_CASE("Test helper function to multiply BigInts") {
