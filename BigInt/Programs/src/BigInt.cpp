@@ -135,7 +135,7 @@ BigInt BigInt::mult(const BigInt& i2) const
     return multTotal;
 }
 
-BigINt BigInt::operator-(const BigInt& i2) const
+BigInt BigInt::operator-(const BigInt& i2) const
 {
     BigInt sub;
 
