@@ -79,12 +79,12 @@ bool BigInt::operator>=(const BigInt& i2) const
     return (this->operator>(i2)) || (this->operator==(i2));
 }
 
-BigInt Bigint::sub(const BigInt& i2) const
+BigInt BigInt::sub(const BigInt & i2) const
 {
-    
+    return BigInt();
 }
 
-BigInt BigInt::sum(const BigInt& i2) const
+BigInt BigInt::sum(const BigInt &i2) const
 {
     string digsum1, digsum2, temp;
     digsum1 = digits;

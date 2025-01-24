@@ -13,9 +13,9 @@ class BigInt
     BigInt(string);
 
     // helper functions
+    BigInt sub(const BigInt&) const;
     BigInt sum(const BigInt&) const;
     BigInt mult(const BigInt&) const;
-    BigInt sub(const BigInt&) const;
 
     // member functions
     string to_string() const;
