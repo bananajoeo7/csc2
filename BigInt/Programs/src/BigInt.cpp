@@ -126,7 +126,7 @@ BigInt BigInt::mult(const BigInt& i2) const
         multCount = multCount - BigInt("1");
     }
 
-    return mult_total;
+    return multTotal;
 }
 
 BigInt BigInt::operator+(const BigInt& i2) const
