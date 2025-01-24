@@ -117,28 +117,11 @@ BigInt BigInt::sum(const BigInt& i2) const
 
 BigInt BigInt::mult(const BigInt& i2) const
 {
-    string multnum, multcount, temp;
+    string multNum, multCount, multTotal;
     multnum = digits;
     multcount = i2.digits;
+    multTotal = "0"
 
-    reverse(multnum.begin(), multnum.end());
-
-    string mult_total;
-    char carry = 0;
-
-    for (size_t i = 0; i < multcount.size(); i++) {
-        int digit1 = digsum1[i] - '0';
-
-        int digitMult = digit1 + digit1 + carry;
-        mult_total.push_back((digitMult % 10) + '0');
-        carry = digitMult/10;
-    }
-    
-    if (carry > 0) {
-        mult_total.push_back(carry + '0');
-    }
-
-    reverse(mult_total.begin(), mult_total.end());
 
     return BigInt(mult_total);
 }
