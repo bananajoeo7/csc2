@@ -117,17 +117,16 @@ BigInt BigInt::sum(const BigInt& i2) const
 
 BigInt BigInt::mult(const BigInt& i2) const
 {
-    string multNum, multCount, multTotal;
-    multNum = digits;
-    multCount = i2.digits;
-    multTotal = "0"
+    BigInt multNum(digits);
+    BigInt multCount(i2.digits);
+    BigInt multTotal("0");
 
     while (multCount != "0") {
         multTotal = multTotal + multNum;
         multCount = multCount - "1";
     }
 
-    return BigInt(mult_total);
+    return mult_total;
 }
 
 BigInt BigInt::operator+(const BigInt& i2) const
