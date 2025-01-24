@@ -79,7 +79,6 @@ TEST_CASE("Test helper function to add BigInts with negatives") {
     BigInt i5("119");
     BigInt i6("-361736761273");
     BigInt i7("361736761273");
-
     CHECK((i1.sum(i2)).to_string() == "-198");
     CHECK((i1.sum(i3)).to_string() == "-99");
     CHECK((i1.sum(i4)).to_string() == "-765");
