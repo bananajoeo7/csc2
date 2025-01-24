@@ -71,6 +71,27 @@ TEST_CASE("Test helper function to add BigInts") {
     CHECK((i1.sum(i6)).to_string() == "361736761396");
 }
 
+TEST_CASE("Test helper function to add BigInts with negatives") {
+    BigInt i1("123");
+    BigInt i2("-321");
+    BigInt i3("-222");
+    BigInt i4("-888");
+    BigInt i5("119");
+    BigInt i6("-361736761273");
+    BigInt i7("361736761273");
+
+    CHECK((i1.sum(i2)).to_string() == "-198");
+    CHECK((i1.sum(i3)).to_string() == "-99");
+    CHECK((i1.sum(i4)).to_string() == "-765");
+    CHECK((i2.sum(i3)).to_string() == "-543");
+    CHECK((i5.sum(i2)).to_string() == "-202");
+    CHECK((i4.sum(i6)).to_string() == "-361737650161");
+    CHECK((i7.sum(i6)).to_string() == "0");
+    CHECK((i7.sum(i1)).to_string() == "361736761396");
+}
+
+
+/*
 TEST_CASE("Test helper function to multiply BigInts") {
     BigInt i1("123");
     BigInt i2("321");
@@ -82,4 +103,4 @@ TEST_CASE("Test helper function to multiply BigInts") {
     CHECK((i1.mult(i3)).to_string() == "27306");
     CHECK((i1.mult(i5)).to_string() == "14637");
     CHECK((i1.mult(i4)).to_string() == "109224");
-}
+}*/

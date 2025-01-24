@@ -118,8 +118,9 @@ BigInt BigInt::sum(const BigInt& i2) const
 BigInt BigInt::mult(const BigInt& i2) const
 {
     BigInt multNum(digits);
-    string multCount = i2.digits;
     BigInt multTotal("0");
+
+    string multCount = i2.digits;
 
     while (multCount != '0') {
         multTotal = multTotal + multNum;
