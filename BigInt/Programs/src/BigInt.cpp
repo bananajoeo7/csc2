@@ -121,9 +121,9 @@ BigInt BigInt::mult(const BigInt& i2) const
     string multCount = i2.digits;
     BigInt multTotal("0");
 
-    while (multCount != "0") {
+    while (multCount != '0') {
         multTotal = multTotal + multNum;
-        multCount = multCount - "1";
+        multCount = multCount - '1';
     }
 
     return multTotal;
