@@ -118,10 +118,14 @@ BigInt BigInt::sum(const BigInt& i2) const
 BigInt BigInt::mult(const BigInt& i2) const
 {
     string multNum, multCount, multTotal;
-    multnum = digits;
-    multcount = i2.digits;
+    multNum = digits;
+    multCount = i2.digits;
     multTotal = "0"
 
+    while (multCount != "0") {
+        multTotal = multTotal + multNum;
+        multCount = multCount - "1";
+    }
 
     return BigInt(mult_total);
 }
