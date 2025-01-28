@@ -83,11 +83,43 @@ BigInt BigInt::sub(const BigInt & i2) const
 {
     string num1 = digits;
     string num2 = i2.digits;
-    bool isNegative1 = flag;   
+    bool isNegative1 = flag;
+    bool isNegative2 = flag;      
     bool resultNegative = false;
 
+    reverse(num1.begin(), num1.end());
+    reverse(num2.begin(), num2.end());
 
-    return BigInt();
+    string result;
+    int borrow = 0;
+
+    // case1: subtracting a negative number (A - (-B))
+    if (isNegative2) {
+        return this->sum(BigInt(num2)); 
+    }
+
+    // case2: subtracting from a negative (-A - B) = -(A + B)
+    if (isNegative1 && !isNegative2) {
+        return BigInt("-" + (BigInt(num1).sum(i2)).digits); 
+    }
+
+    for (size_t i = 0; i < num1.size(); i++) {
+        int digit1 = num1[i] - '0';
+        int digit2 = (i < num2.size()) ? num2[i] - '0' : 0;
+
+        int diff = digit1 - digit2 - borrow;
+
+        if (diff < 0) {
+            diff += 10;
+            borrow = 1; // Borrow from the next higher digit
+        } else {
+            borrow = 0; // No borrow needed
+        }
+
+        result.push_back(diff + '0');
+    }
+
+    return BigInt(result);
 }
 
 BigInt BigInt::sum(const BigInt &i2) const
