@@ -81,6 +81,12 @@ bool BigInt::operator>=(const BigInt& i2) const
 
 BigInt BigInt::sub(const BigInt & i2) const
 {
+    string num1 = digits;
+    string num2 = i2.digits;
+    bool isNegative1 = flag;   
+    bool resultNegative = false;
+
+
     return BigInt();
 }
 
