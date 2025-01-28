@@ -103,7 +103,7 @@ BigInt BigInt::sub(const BigInt & i2) const
         BigInt absI2(num2);
 
         cout << "this ran" << "\n";
-        
+
 
         return absThis.sub(absI2); // Swap and compute absolute subtraction
     }
@@ -126,6 +126,7 @@ BigInt BigInt::sub(const BigInt & i2) const
 
     // Case 4: Both numbers are positive (normal subtraction)
     if (*this < i2) {
+        cout << "bob" << "\n";
         swap(num1, num2);
         resultNegative = true;
     }
