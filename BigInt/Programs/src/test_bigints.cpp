@@ -96,11 +96,10 @@ TEST_CASE("Test BigInt subtraction") {
     CHECK((i7.sub(i7)).to_string() == "0");     // 0 - 0 = 0
 
     // Subtraction with negatives
+
     CHECK((i1.sub(i8)).to_string() == "246");   // 123 - (-123) = 246
-/*    CHECK((i8.sub(i1)).to_string() == "-246");  // -123 - 123 = -246
+    CHECK((i8.sub(i1)).to_string() == "-246");  // -123 - 123 = -246
     CHECK((i8.sub(i9)).to_string() == "198");   // -123 - (-321) = 198
-    CHECK((i9.sub(i8)).to_string() == "-198");  // -321 - (-123) = -198
-    */
 }
 
 
