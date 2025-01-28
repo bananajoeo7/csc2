@@ -84,7 +84,7 @@ BigInt BigInt::sub(const BigInt & i2) const
     string num1 = digits;
     string num2 = i2.digits;
     bool isNegative1 = flag;
-    bool isNegative2 = flag;      
+    bool isNegative2 = i2.flag;      
     bool resultNegative = false;
 
     reverse(num1.begin(), num1.end());
@@ -93,12 +93,14 @@ BigInt BigInt::sub(const BigInt & i2) const
     string result;
     int borrow = 0;
 
-    
+    std::cout << isNegative1 << ", " << isNegative2 << "\n";
+    std::cout << num1 << "\n";
+    std::cout << num2 << "\n";
 
     // case1: subtracting a negative number (A - (-B))
     if (isNegative2) {
         std::cout << num1;
-        std::cout << num2;
+        std::cout << num2 << "\n";;
         return (BigInt(num1).sum(BigInt(num2)).to_string());
     }
 
