@@ -99,13 +99,16 @@ BigInt BigInt::sub(const BigInt & i2) const
 
     // case1: subtracting a negative number (A - (-B))
     if (isNegative2) {
-        std::cout << num1;
-        std::cout << num2 << "\n";;
+        reverse(num1.begin(), num1.end());
+        reverse(num2.begin(), num2.end());
         return (BigInt(num1).sum(BigInt(num2)).to_string());
     }
 
     // case2: subtracting from a negative (-A - B) = -(A + B)
     if (isNegative1 && !isNegative2) {
+
+    reverse(num1.begin(), num1.end());
+        reverse(num2.begin(), num2.end());
         return BigInt("-" + (BigInt(num1).sum(i2)).digits); 
     }
 
