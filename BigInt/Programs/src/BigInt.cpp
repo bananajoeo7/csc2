@@ -93,22 +93,25 @@ BigInt BigInt::sub(const BigInt & i2) const
     string result;
     int borrow = 0;
 
+    
+
+    // case1: subtracting a negative number (A - (-B))
+    if (isNegative2) {
+        std::cout << BigInt(num1).sum(BigInt(num2)).to_string();
+        return (BigInt(num1).sum(BigInt(num2)).to_string());
+    }
+
+    // case2: subtracting from a negative (-A - B) = -(A + B)
+    if (isNegative1 && !isNegative2) {
+        return BigInt("-" + (BigInt(num1).sum(i2)).digits); 
+    }
+
     // Case 3: Both numbers are negative
     if (isNegative1 && isNegative2) {
         BigInt absThis(num1);
         BigInt absI2(num2);
         
         return absI2.sub(absThis); // Swap and compute absolute subtraction
-    }
-
-    // case1: subtracting a negative number (A - (-B))
-    if (isNegative2) {
-        return this->sum(BigInt(num2)); 
-    }
-
-    // case2: subtracting from a negative (-A - B) = -(A + B)
-    if (isNegative1 && !isNegative2) {
-        return BigInt("-" + (BigInt(num1).sum(i2)).digits); 
     }
 
     // Case 4: Both numbers are positive (normal subtraction)
@@ -194,6 +197,7 @@ BigInt BigInt::sum(const BigInt &i2) const
     return BigInt(sum_total);
 }
 
+/*
 BigInt BigInt::mult(const BigInt& i2) const
 {
     BigInt multNum(digits);
@@ -208,6 +212,7 @@ BigInt BigInt::mult(const BigInt& i2) const
 
     return multTotal;
 }
+*/
 
 BigInt BigInt::operator-(const BigInt& i2) const
 {
@@ -222,10 +227,11 @@ BigInt BigInt::operator+(const BigInt& i2) const
 
     return sum;
 }
-
+/*
 BigInt BigInt::operator*(const BigInt & i2) const
 {
     BigInt mult;
 
     return mult;
 }
+*/
