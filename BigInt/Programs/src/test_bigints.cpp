@@ -71,6 +71,39 @@ TEST_CASE("Test helper function to add BigInts") {
     CHECK((i1.sum(i6)).to_string() == "361736761396");
 }
 
+TEST_CASE("Test BigInt subtraction") {
+    BigInt i1("123");
+    BigInt i2("321");
+    BigInt i3("222");
+    BigInt i4("888");
+    BigInt i5("119");
+    BigInt i6("361736761273");
+    BigInt i7("0");
+    BigInt i8("-123");
+    BigInt i9("-321");
+
+    // Subtraction of smaller from larger
+    CHECK((i2.sub(i1)).to_string() == "198");   // 321 - 123 = 198
+    CHECK((i4.sub(i3)).to_string() == "666");   // 888 - 222 = 666
+    CHECK((i6.sub(i1)).to_string() == "361736761150"); // 361736761273 - 123 = 361736761150
+
+    // Subtraction of larger from smaller
+    CHECK((i1.sub(i2)).to_string() == "-198");  // 123 - 321 = -198
+    CHECK((i3.sub(i4)).to_string() == "-666");  // 222 - 888 = -666
+
+    // Subtraction with zero
+    CHECK((i1.sub(i7)).to_string() == "123");   // 123 - 0 = 123
+    CHECK((i7.sub(i1)).to_string() == "-123");  // 0 - 123 = -123
+    CHECK((i7.sub(i7)).to_string() == "0");     // 0 - 0 = 0
+
+    // Subtraction with negatives
+    CHECK((i1.sub(i8)).to_string() == "246");   // 123 - (-123) = 246
+    CHECK((i8.sub(i1)).to_string() == "-246");  // -123 - 123 = -246
+    CHECK((i8.sub(i9)).to_string() == "198");   // -123 - (-321) = 198
+    CHECK((i9.sub(i8)).to_string() == "-198");  // -321 - (-123) = -198
+}
+
+
 /*
 TEST_CASE("Test helper function to add BigInts with negatives") {
     BigInt i1("123");
