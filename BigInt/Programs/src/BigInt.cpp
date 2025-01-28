@@ -155,7 +155,7 @@ BigInt BigInt::sub(const BigInt & i2) const
 
     reverse(result.begin(), result.end());
 
-    return BigInt(result);
+    return BigInt((resultNegative ? "-" : "") + result);
 }
 
 BigInt BigInt::sum(const BigInt &i2) const
