@@ -93,6 +93,14 @@ BigInt BigInt::sub(const BigInt & i2) const
     string result;
     int borrow = 0;
 
+    // Case 3: Both numbers are negative
+    if (isNegative1 && isNegative2) {
+        BigInt absThis(num1);
+        BigInt absI2(num2);
+        
+        return absI2.sub(absThis); // Swap and compute absolute subtraction
+    }
+
     // case1: subtracting a negative number (A - (-B))
     if (isNegative2) {
         return this->sum(BigInt(num2)); 
@@ -101,6 +109,12 @@ BigInt BigInt::sub(const BigInt & i2) const
     // case2: subtracting from a negative (-A - B) = -(A + B)
     if (isNegative1 && !isNegative2) {
         return BigInt("-" + (BigInt(num1).sum(i2)).digits); 
+    }
+
+    // Case 4: Both numbers are positive (normal subtraction)
+    if (*this < i2) {
+        swap(num1, num2);
+        resultNegative = true;
     }
 
     for (size_t i = 0; i < num1.size(); i++) {
@@ -118,6 +132,28 @@ BigInt BigInt::sub(const BigInt & i2) const
 
         result.push_back(diff + '0');
     }
+
+    while (borrow > 0 && result.size() > 0) {
+        int lastDigit = result.back() - '0';
+        result.pop_back();
+        lastDigit -= borrow;
+
+        if (lastDigit < 0) {
+            lastDigit += 10;
+            borrow = 1;
+        } else {
+            borrow = 0;
+        }
+
+        result.push_back(lastDigit + '0');
+    }
+
+    // Remove extra zeros
+    while (result.size() > 1 && result.back() == '0') {
+        result.pop_back();
+    }
+
+    reverse(result.begin(), result.end());
 
     return BigInt(result);
 }
